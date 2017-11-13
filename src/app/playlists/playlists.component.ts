@@ -23,6 +23,7 @@ export class PlaylistsComponent implements OnInit {
       tracks: 2,
       color: '#FF0000',
       favourite: true,
+      description: 'To jest opis Angular Greatest Hits!'
     },
     {
       id: 2,
@@ -30,9 +31,10 @@ export class PlaylistsComponent implements OnInit {
       tracks: 23,
       color: '#0000FF',
       favourite: false,
+      description: 'To jest opis The best of EduWeb!'
     }
   ]
-  
+
   select(playlist){
     if(playlist !== this.selected)
     this.mode = "selected"
@@ -51,7 +53,8 @@ export class PlaylistsComponent implements OnInit {
       name: '',
       tracks: 0,
       color: '#FF0000',
-      favourite: false
+      favourite: false,
+      description: ''
     };
     this.selected = newPlaylist;
     this.edited = Object.assign({},newPlaylist);

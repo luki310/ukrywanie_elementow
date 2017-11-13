@@ -17,11 +17,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
             <input type="color" [(ngModel)]="playlist.color">
           </div>
           <div class="form-group">
-            <label><input type="checkbox" [(ngModel)]="playlist.favourite"> 
+            <label><input type="checkbox" [(ngModel)]="playlist.favourite">
             Ulubiona</label>
           </div>
+          <label><input type="checkbox" (change)="hide = !hide">Dodatkowy opis</label>
+            <div class="form-group" *ngIf="hide">
+              <textarea  class="form-control" rows="3" [(ngModel)]="playlist.description"></textarea>
+            </div>
           <div class="form-group">
-            <button class="btn btn-success float-xs-right" 
+            <button class="btn btn-success float-xs-right"
                     (click)="save(playlist)">Zapisz</button>
           </div>
         </div>
